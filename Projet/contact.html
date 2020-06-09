@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Contact</title>
+  </head>
+
+  <body>
+    <!-- barre navigation -->
+    <nav>
+      <ul>
+        <li><a href="HowEfrei.html">Home</a></li>
+        <li><a href="#">Recherche</a></li>
+        <li class="deroulant">
+          <a href="#"> Explore &ensp;</a>
+          <ul class="sous">
+            <li><a href=".explore/explore_class.html">Les cours</a></li>
+            <li><a href="#">Les associations</a></li>
+            <li><a href="#">L'administration</a></li>
+            <li><a href="#">Fun</a></li>
+          </ul>
+        </li>
+        <li class="deroulant">
+          <a href="#">Contribute &ensp;</a>
+          <ul class="sous">
+            <li><a href="#">Ecrire un article</a></li>
+            <li><a href="#">Report a bug</a></li>
+          </ul>
+        </li>
+        <li><a href="user.html">Utilisateur</a></li>
+        <li><a href="#">A propos</a></li>
+      </ul>
+    </nav>
+
+    <!-- form espace contact -->
+
+    <form class="contact">
+      <div class="row">
+        <h3>Contactez nous</h3>
+        <p class="lead">
+          Si vous avez un problème avec le site, n'hésitez pas à nous contacter
+          ;)
+        </p>
+
+        <form class="remplir">
+          <div class="nom">
+            <img
+              border="0"
+              src="/Users/anaistonlop/Desktop/Projet web/img/user.png"
+              width="25"
+              height="25"
+            />
+            <input
+              type="text"
+              id="name"
+              name="user_name"
+              placeholder="Nom"
+              required
+            />
+          </div>
+
+          <div class="mail">
+            <img
+              border="0"
+              src="/Users/anaistonlop/Desktop/Projet web/img/mail.png"
+              width="25"
+              height="25"
+            />
+            <input
+              type="text"
+              id="email"
+              name="user_mail"
+              placeholder="E-mail"
+              required
+            />
+          </div>
+
+          <div class="message">
+            <img
+              border="0"
+              src="/Users/anaistonlop/Desktop/Projet web/img/crayon.png"
+              width="25"
+              height="25"
+            />
+            <input rows="5 " placeholder="message" required />
+          </div>
+
+          <div class="button">
+            <button type="submit" class="envoyer" onclick="envoyer()">
+              ENVOYER
+            </button>
+          </div>
+        </form>
+      </div>
+    </form>
+
+    <main class="main">
+      <table>
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>E-mail</th>
+            <th>Message</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </main>
+
+    <script>
+      let delay = 0;
+
+      function envoyer() {
+        const form = document.forms.tp; // !!!!!!!!!! PROBLEM
+        const table = document.querySelector("tbody");
+
+        const inputs = form.querySelectorAll("input");
+
+        /*AJOUTER LES DONNEES AU TABLEAU*/
+        const newRow = document.createElement("tr");
+        for (input of inputs) {
+          const item = document.createElement("td");
+          item.textContent = input.value;
+          newRow.appendChild(item);
+        }
+        table.appendChild(newRow);
+
+
+      function vider() {
+        const table = document.querySelector("tbody");
+        while (table.firstChild) {
+          table.removeChild(table.firstChild);
+        }
+      }
+    </script>
+  </body>
+
+  <!-- Footer -->
+  <footer class="footer-distributed">
+    <div class="footer-left">
+      <h3>How<span>Efrei</span></h3>
+
+      <p class="footer-links">
+        <a href="#">Accueil</a>
+        |
+        <a href="#">A propos</a>
+        |
+        <a href="#">Crédits</a>
+      </p>
+    </div>
+
+    <div class="footer-right">
+      <p class="footer-company-about">
+        <span>Rejoignez nous sur les réseaux sociaux</span>
+      </p>
+      <div class="footer-icons">
+        <a href="https://www.facebook.com"
+          ><img border="0" src="./img/facebook.png" width="25" height="25"
+        /></a>
+        <a href="https://twitter.com/home"
+          ><img border="0" src="./img/twitter.png" width="25" height="25"
+        /></a>
+        <a href="https://www.instagram.com/?hl=fr"
+          ><img border="0" src="./img/insta.png" width="25" height="25"
+        /></a>
+        <a href="https://www.linkedin.com/feed/"
+          ><img border="0" src="./img/linkedin.png" width="25" height="25"
+        /></a>
+      </div>
+    </div>
+  </footer>
+</html>
+
+<style>
+  html {
+    background-color: white;
+
+    margin-left: 10px; /*marge pour le corps du site*/
+    margin-right: 10px;
+  }
+
+  .row {
+    margin-top: 40px;
+  }
+  .lead {
+    margin-top: 60px;
+  }
+
+  .remplir {
+    display: flex; /* obligatoire pour utiliser justify-content */
+    justify-content: space-evenly; /* espacer les ptites boites du form */
+    margin-bottom: 80px;
+    width: 1000px;
+  }
+
+  .button {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+  }
+
+  input:valid {
+    border-bottom: 2px solid black;
+  }
+
+  input:invalid {
+    border-bottom: 2px solid red;
+  }
+
+  form {
+    width: 100%;
+    background-color: white;
+    text-align: center;
+  }
+  .remplir {
+    width: 50%;
+    height: 10%;
+    display: flex;
+    flex-flow: row;
+  }
+  button {
+  }
+
+  table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+  }
+
+  footer-distributed {
+    margin-bottom: 10px;
+  }
+</style>
