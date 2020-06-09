@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css" />
+        <title>HowEfrei</title>
+    </head>
+    <body>
+
+        <nav>
+            <ul>
+                <li><a href="HowEfrei.html">Home</a></li>
+            <li><a href="#">Recherche</a></li>
+              <li class="deroulant"><a href="#"> Explore &ensp;</a>
+                <ul class="sous">
+                  <li><a href=".explore/explore_class.html">Les cours</a></li>
+                  <li><a href="#">Les associations</a></li>
+                  <li><a href="#">L'administration</a></li>
+                  <li><a href="#">Fun</a></li>
+                </ul>
+              </li>
+              <li class="deroulant"><a href="#">Contribute &ensp;</a>
+                <ul class="sous">
+                  <li><a href="#">Ecrire un article</a></li>
+                  <li><a href="#">Report a bug</a></li>
+                </ul>
+              </li>
+              <li><a href="user.html">Utilisateur</a></li>
+              <li><a href="#">A propos</a></li>
+            </ul>
+          </nav>
+
+          <main>
+            <div class="card">
+
+              <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
+              <p><img id="output" width="200" src="./img/pat.jpg"/></p>
+              <p><label for="file" id="add" style="cursor: pointer;">Importer une nouvelle image d'utilisateur</label></p>
+
+                <h1 id="user_name" contenteditable="true">Nom Utilisateur</h1>
+                <p class="Promo" id="user_promo" contenteditable="true">Promo</p>
+                <p> Resumé</p>
+                <p contenteditable="true"> Saisis ton histoire</p>
+                <p id="user_age" contenteditable="true">Age</p>
+                <p class="grey">Cliquez sur un élement pour le modifier</p>
+            </div>
+          </main>
+
+    </body>
+
+    <footer class="footer-distributed">
+ 
+        <div class="footer-left">
+            <h3>How<span>Efrei</span></h3>
+
+            <p class="footer-links">
+                <a href="#">Accueil</a>
+                |                
+                <a href="#">A propos</a>
+                |
+                <a href="#">Crédits</a>
+            </p>
+
+        </div>
+
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>Rejoignez nous sur les réseaux sociaux</span>
+                </p>
+            <div class="footer-icons">
+                <a href="https://www.facebook.com"><img border="0" src="./img/facebook.png" width="25" height="25"></a>
+                <a href="https://twitter.com/home"><img border="0" src="./img/twitter.png" width="25" height="25"></a>
+                <a href="https://www.instagram.com/?hl=fr"><img border="0" src="./img/insta.png" width="25" height="25"></a>
+                <a href="https://www.linkedin.com/feed/"><img border="0" src="./img/linkedin.png" width="25" height="25"></a>
+            </div>
+        </div>
+    </footer>
+</html>
+
+<script>
+  var loadFile = function(event) {
+    var image = document.getElementById('output');
+    image.src = URL.createObjectURL(event.target.files[0]);
+    var text = document.getElementById('add');
+    text.textContent = "";
+  };
+  </script>
