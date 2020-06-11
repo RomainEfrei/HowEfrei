@@ -30,13 +30,15 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin: 8px;
   }
-  
+
   .about-section {
-    padding: 50px;
+    padding: 30px;
+    padding-top: 15px;
     text-align: center;
     background-color: #474e5d;
     color: white;
   }
+  
   
   .member {
     padding: 0 16px;
