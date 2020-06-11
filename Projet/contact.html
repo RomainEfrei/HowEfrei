@@ -4,15 +4,15 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="style.css" />
     <title>Contact</title>
+    <script src="comment.js" defer></script>
   </head>
 
   <body>
     <!-- barre navigation -->
     <nav>
       <ul>
-        <li><a href="HowEfrei.html">Home</a></li>
-        <li class="deroulant">
-          <a href="#"> Explore &ensp;</a>
+          <li><a href="HowEfrei.html">Accueil</a></li>
+        <li class="deroulant"><a href="#"> Les articles &ensp;</a>
           <ul class="sous">
             <li><a href="explore_class.html">Les cours</a></li>
             <li><a href="associations.html">Les associations</a></li>
@@ -20,11 +20,10 @@
             <li><a href="#">Fun</a></li>
           </ul>
         </li>
-        <li class="deroulant">
-          <a href="#">Contribute &ensp;</a>
+        <li class="deroulant"><a href="#">Contribuer &ensp;</a>
           <ul class="sous">
             <li><a href="#">Ecrire un article</a></li>
-            <li><a href="contact.html">Report a bug</a></li>
+            <li><a href="contact.html">Ecrire un commentaire</a></li>
           </ul>
         </li>
         <li><a href="user.html">Utilisateur</a></li>
@@ -39,54 +38,38 @@
         <h3>Contactez nous</h3>
         <p class="lead">
           Si vous avez un problème avec le site, n'hésitez pas à nous contacter
-          ;)
         </p>
 
         <form class="remplir">
           <div class="nom">
             <img
-              border="0"
-              src="./img/user.png"
-              width="25"
-              height="25"
+              border="0" src="./img/user.png" width="25" height="25"
             />
             <input
-              type="text"
-              id="name"
-              name="user_name"
-              placeholder="Nom"
-              required
+              id="name" type="text"  name="user_name" placeholder="Nom" required
             />
           </div>
 
           <div class="mail">
             <img
-              border="0"
-              src="./img/mail.png"
-              width="25"
-              height="25"
+              border="0" src="./img/mail.png" width="25" height="25"
             />
             <input
-              type="text"
-              id="email"
-              name="user_mail"
-              placeholder="E-mail"
-              required
+              id="e-mail" type="text" name="user_mail" placeholder="E-mail" required
             />
           </div>
 
-          <div class="message">
+          <div class="nom">
             <img
-              border="0"
-              src="./img/crayon.png"
-              width="25"
-              height="25"
+              border="0" src="./img/crayon.png" width="25" height="25"
             />
-            <input rows="5 " placeholder="message" required />
+            <input
+              id="comment" type="text"  name="user_comment" placeholder="Commentaire"
+            />
           </div>
 
           <div class="button">
-            <button type="submit" class="envoyer" onclick="envoyer()">
+            <button type="button" class="envoyer" onclick="Ajouter()">
               ENVOYER
             </button>
           </div>
@@ -95,44 +78,21 @@
     </form>
 
     <main class="main">
-      <table>
+      <table width="100%" id="T" style="display : table">
+        <caption style="text-align:center">Commentaires</caption>
         <thead>
-          <tr>
-            <th>Nom</th>
-            <th>E-mail</th>
-            <th>Message</th>
-          </tr>
+            <tr>
+                <th width="25%">Nom</th>
+                <th width="25%">E-mail</th>
+                <th width="50%">Commentaire</th>
+            </tr>
         </thead>
-        <tbody></tbody>
-      </table>
+        <tbody>
+
+        </tbody>
+    </table>
     </main>
 
-    <script>
-      let delay = 0;
-
-      function envoyer() {
-        const form = document.forms.tp; // !!!!!!!!!! PROBLEM
-        const table = document.querySelector("tbody");
-
-        const inputs = form.querySelectorAll("input");
-
-        /*AJOUTER LES DONNEES AU TABLEAU*/
-        const newRow = document.createElement("tr");
-        for (input of inputs) {
-          const item = document.createElement("td");
-          item.textContent = input.value;
-          newRow.appendChild(item);
-        }
-        table.appendChild(newRow);
-      }
-
-      function vider() {
-        const table = document.querySelector("tbody");
-        while (table.firstChild) {
-          table.removeChild(table.firstChild);
-        }
-      }
-    </script>
   </body>
 
   <!-- Footer -->
@@ -184,7 +144,7 @@
     margin-top: 15px;
   }
 
-  .row {
+  tr {
     margin-top: 40px;
   }
   .lead {
