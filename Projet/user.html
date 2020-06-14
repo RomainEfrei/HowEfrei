@@ -8,33 +8,34 @@
     <body>
        
     <img src="./img/howefrei.png" width="250px" height="120px"/>
-      <nav>
-        <ul>
-            <li><a href="HowEfrei.html">Accueil</a></li>
-          <li class="deroulant"><a href="#"> Les articles &ensp;</a>
-            <ul class="sous">
-              <li><a href="explore_class.html">Les cours</a></li>
-              <li><a href="associations.html">Les associations</a></li>
-              <li><a href="#">L'administration</a></li>
-              <li><a href="#">Fun</a></li>
-            </ul>
-          </li>
-          <li class="deroulant"><a href="#">Contribuer &ensp;</a>
-            <ul class="sous">
-              <li><a href="#">Ecrire un article</a></li>
-              <li><a href="contact.html">Ecrire un commentaire</a></li>
-            </ul>
-          </li>
-          <li><a href="user.html">Utilisateur</a></li>
-          <li><a href="AboutUs.html">A propos</a></li>
-        </ul>
-      </nav>
+    <nav>
+      <ul>
+        <li><a href="HowEfrei.html">Accueil</a></li>
+        <li class="deroulant">
+          <a href="explore_class.html"> Les articles &ensp;</a>
+          <ul class="sous">
+            <li><a href="explore_class.html">Les cours</a></li>
+            <li><a href="associations.html">Les associations</a></li>
+            <li><a href="lifeatefrei.html">La vie à l'Efrei</a></li>
+
+          </ul>
+        </li>
+        <li class="deroulant">
+          <a href="contact.html">Contribuer &ensp;</a>
+          <ul class="sous">
+            <li><a href="contact.html">Ecrire un commentaire</a></li>
+          </ul>
+        </li>
+        <li><a href="user.html">Utilisateur</a></li>
+        <li><a href="AboutUs.html">A propos</a></li>
+      </ul>
+    </nav>
 
           <main>
             <div class="card">
 
               <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
-              <p><img id="output" width="200" src="./img/pat.jpg"/></p>
+              <p><img id="output" width="200" src="./img/user.png"/></p>
               <p><label for="file" id="add" style="cursor: pointer;">Importer une nouvelle image d'utilisateur</label></p>
 
                 <h1 id="user_name" contenteditable="true">Nom Utilisateur</h1>
@@ -49,32 +50,37 @@
     </body>
 
     <footer class="footer-distributed">
- 
-        <div class="footer-left">
-            <h3>How<span>Efrei</span></h3>
-
-            <p class="footer-links">
-                <a href="HowEfrei.html">Accueil</a>
-                |                
-                <a href="AboutUs.html">A propos</a>
-                |
-                <a href="#">Crédits</a>
-            </p>
-
+      <div class="footer-left">
+        <h3>How<span>Efrei</span></h3>
+  
+        <p class="footer-links">
+          <a href="HowEfrei.html">Accueil</a>
+          |
+          <a href="AboutUs.html">A propos</a>
+          |
+          <a href="#">Crédits</a>
+        </p>
+      </div>
+  
+      <div class="footer-right">
+        <p class="footer-company-about">
+          <span>Rejoignez nous sur les réseaux sociaux</span>
+        </p>
+        <div class="footer-icons">
+          <a href="https://www.facebook.com"
+            ><img border="0" src="./img/facebook.png" width="25" height="25"
+          /></a>
+          <a href="https://twitter.com/home"
+            ><img border="0" src="./img/twitter.png" width="25" height="25"
+          /></a>
+          <a href="https://www.instagram.com/?hl=fr"
+            ><img border="0" src="./img/insta.png" width="25" height="25"
+          /></a>
+          <a href="https://www.linkedin.com/feed/"
+            ><img border="0" src="./img/linkedin.png" width="25" height="25"
+          /></a>
         </div>
-
-        <div class="footer-right">
-            <p class="footer-company-about">
-                <span>Rejoignez nous sur les réseaux sociaux</span>
-                </p>
-            <div class="footer-icons">
-                <a href="https://www.facebook.com"><img border="0" src="./img/facebook.png" width="25" height="25"></a>
-                <a href="https://twitter.com/home"><img border="0" src="./img/twitter.png" width="25" height="25"></a>
-                <a href="https://www.instagram.com/?hl=fr"><img border="0" src="./img/insta.png" width="25" height="25"></a>
-                <a href="https://www.linkedin.com/feed/"><img border="0" src="./img/linkedin.png" width="25" height="25"></a>
-            </div>
-        </div>
-    </footer>
+      </div>
 </html>
 
 <script>
